@@ -11,7 +11,6 @@ import {
     SCSSBadge,
 } from '@/components/Badges'
 import { ExternalLinkIcon } from '@/components/ExternalLinkIcon'
-import clsx from 'clsx'
 
 const Block = ({ title, description, children }) => {
     return (
