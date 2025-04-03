@@ -41,13 +41,13 @@ jobs:
             dist/*
           target: |
             ${{ env.FRONTEND_DIR }}
+          strip_components: 1
 
-      - name: Move & Restart Services
+      - name: Restart nginx
         uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ env.SERVER_IP }}
           username: ${{ env.SSH_USER }}
           key: ${{ env.SSH_KEY }}
           script: |
-            mv ${{ env.FRONTEND_DIR }}/dist ${{ env.FRONTEND_DIR }}
             sudo systemctl restart nginx
