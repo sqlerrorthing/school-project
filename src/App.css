@@ -13,6 +13,12 @@ main {
     display: flex;
 }
 
+.dela-gothic {
+    font-family: "Dela Gothic One", sans-serif;
+    font-style: normal;
+}
+  
+
 .main-container {
     width: calc(100vw - 60px);
     height: calc(100vh - 60px);
@@ -46,6 +52,7 @@ main {
 }
 
 .link {
+    font-size: 13px;
     padding: 5px 10px;
     text-decoration: none;
     color: white;

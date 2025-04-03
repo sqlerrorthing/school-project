@@ -3,7 +3,7 @@ import doge from '@/assets/images/doge.png';
 
 function Link({name, url}) {
    return (
-       <a href={url} target="_blank" className={"link"}>
+       <a href={url} target="_blank" className={"link dela-gothic"}>
            {name}
        </a>
    );
