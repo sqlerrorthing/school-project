@@ -45,7 +45,7 @@ jobs:
           username: ${{ env.SSH_USER }}
           key: ${{ env.SSH_KEY }}
           source: |
-            ./frontend/build/*
+            ./frontend/dist/*
             ./backend/*
           target: |
             ${{ env.FRONTEND_DIR }}
