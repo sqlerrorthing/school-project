@@ -1,4 +1,5 @@
 import './App.css'
+import doge from '@/assets/images/doge.png';
 
 function Link({name, url}) {
    return (
@@ -32,7 +33,7 @@ function App() {
         <>
             <main className={"main"}>
                 <div className={"doge"}>
-                    <img src="images/doge.png" alt=""/>
+                    <img src={doge} alt=""/>
                 </div>
                 <div className="main-container">
                     <div className="title">
