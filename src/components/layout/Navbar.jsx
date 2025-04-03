@@ -1,9 +1,10 @@
 import clsx from "clsx";
-import {Link, useLocation} from "react-router-dom";
+import {Link, useMatch} from "react-router-dom";
 
 const NavbarLink = ({name, url}) => {
-    const location = useLocation();
-    const isActive = location.pathname === url;
+    const isActive = useMatch({
+        path: url,
+    });
 
     return (
         <Link to={url} className={clsx(
