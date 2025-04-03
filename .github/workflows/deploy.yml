@@ -3,7 +3,8 @@ name: Deploy to Production
 on:
   push:
     branches: [production]
-  pull_request: [production]
+  pull_request:
+    branches: [production]
 
 env:
   SERVER_IP: ${{ secrets.PROD_SERVER_IP }}
