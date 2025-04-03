@@ -1,7 +1,3 @@
 export const Autobiography = () => {
-    return (
-        <div>
-            Autobiography
-        </div>
-    )
+	return <div>Autobiography</div>
 }
