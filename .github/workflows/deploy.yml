@@ -18,13 +18,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build Frontend
+      - name: Build
         run: |
           npm ci
           npm run build
-
-      - name: List built files
-        run: ls -R dist
 
       - name: Deploy Files
         uses: appleboy/scp-action@v0.1.7
@@ -37,12 +34,3 @@ jobs:
           target: |
             ${{ env.FRONTEND_DIR }}
           strip_components: 1
-
-      - name: Restart nginx
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ env.SERVER_IP }}
-          username: ${{ env.SSH_USER }}
-          key: ${{ env.SSH_KEY }}
-          script: |
-            sudo systemctl restart nginx
