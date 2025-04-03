@@ -14,7 +14,7 @@ function Links() {
         <ul className={"links"}>
             <Link name={"Гитхаб"} url={"https://github.com/sqlerrorthing"}/>
             <Link name={"Телеграм"} url={"https://t.me/sqlerrorph"}/>
-            <Link name={"Инстаграм"} url={"https://instagram.com/sqlerrorthing"}/>
+            <Link name={"Инстаграм"} url={"https://instagram.com/sqlerror"}/>
         </ul>
     )
 }
