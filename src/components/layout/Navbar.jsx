@@ -1,5 +1,5 @@
-import clsx from 'clsx'
-import { Link, useMatch } from 'react-router-dom'
+import clsx from "clsx"
+import { Link, useMatch } from "react-router-dom"
 
 const NavbarLink = ({ name, url }) => {
 	const isActive = useMatch({
@@ -10,9 +10,10 @@ const NavbarLink = ({ name, url }) => {
 		<Link
 			to={url}
 			className={clsx(
-				isActive && 'bg-accent text-white',
-				!isActive && 'hover:text-white hover:bg-accent/75',
-				'rounded-xl px-2 py-1 transition-colors'
+				"rounded-xl px-2 py-1 transition-colors",
+				isActive
+					? "bg-accent text-white"
+					: "hover:text-white hover:bg-accent/75"
 			)}
 		>
 			{name}
