@@ -31,6 +31,9 @@ jobs:
           npm ci
           npm run build
 
+      - name: List built files
+        run: ls -R frontend/dist
+
       # Шаг 4: Копируем файлы на сервер через SSH
       - name: Deploy Files
         uses: appleboy/scp-action@v0.1.7
