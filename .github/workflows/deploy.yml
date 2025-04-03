@@ -18,7 +18,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build Frontend
+      - name: Build
         run: |
           npm ci
           npm run build
