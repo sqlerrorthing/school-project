@@ -1,11 +1,8 @@
-import './App.css'
 
-function App() {
+export const App = () => {
     return (
-        <>
-
-        </>
+        <h1 className={"w-full"}>
+            soska
+        </h1>
     )
 }
-
-export default App
