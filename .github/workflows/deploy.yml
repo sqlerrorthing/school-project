@@ -10,7 +10,7 @@ env:
   SERVER_IP: ${{ secrets.PROD_SERVER_IP }}
   SSH_USER: ${{ secrets.PROD_SSH_USER }}
   SSH_KEY: ${{ secrets.PROD_SSH_KEY }}
-  FRONTEND_DIR: /var/www/project/frontend
+  FRONTEND_DIR: /var/www/project
 
 jobs:
   deploy:
@@ -42,14 +42,12 @@ jobs:
           target: |
             ${{ env.FRONTEND_DIR }}
 
-      # Шаг 5: Запускаем команды на сервере через SSH
-      - name: Restart Services
+      - name: Move & Restart Services
         uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ env.SERVER_IP }}
           username: ${{ env.SSH_USER }}
           key: ${{ env.SSH_KEY }}
           script: |
-            cd ${{ env.BACKEND_DIR }}
-            npm install --production
+            mv ${{ env.FRONTEND_DIR }}/dist ${{ env.FRONTEND_DIR }}
             sudo systemctl restart nginx
