@@ -1,7 +1,7 @@
+import {Navbar} from "@/components/layout/Navbar.jsx";
+
 export const App = () => {
     return (
-        <h1 className={"w-full"}>
-            soska
-        </h1>
+        <Navbar />
     )
 }
