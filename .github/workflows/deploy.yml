@@ -21,18 +21,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Create folders
-        run: mkdir -p frontend
-
       # Шаг 2: Собираем фронтенд
       - name: Build Frontend
-        working-directory: frontend
         run: |
           npm ci
           npm run build
 
       - name: List built files
-        run: ls -R frontend/dist
+        run: ls -R dist
 
       # Шаг 4: Копируем файлы на сервер через SSH
       - name: Deploy Files
@@ -42,7 +38,7 @@ jobs:
           username: ${{ env.SSH_USER }}
           key: ${{ env.SSH_KEY }}
           source: |
-            frontend/dist/*
+            dist/*
           target: |
             ${{ env.FRONTEND_DIR }}
 
