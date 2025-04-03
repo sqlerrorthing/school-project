@@ -24,14 +24,14 @@ jobs:
 
       # Шаг 2: Собираем фронтенд
       - name: Build Frontend
-        working-directory: ./frontend
+        working-directory: frontend
         run: |
           npm ci
           npm run build
 
       # Шаг 3: Устанавливаем зависимости бэкенда
       - name: Install Backend Dependencies
-        working-directory: ./backend
+        working-directory: backend
         run: npm ci --production
 
       # Шаг 4: Копируем файлы на сервер через SSH
