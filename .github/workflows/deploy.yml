@@ -10,7 +10,6 @@ env:
   SERVER_IP: ${{ secrets.PROD_SERVER_IP }}
   SSH_USER: ${{ secrets.PROD_SSH_USER }}
   SSH_KEY: ${{ secrets.PROD_SSH_KEY }}
-  BACKEND_DIR: /var/www/project/backend
   FRONTEND_DIR: /var/www/project/frontend
 
 jobs:
@@ -23,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create folders
-        run: mkdir -p frontend backend
+        run: mkdir -p frontend
 
       # Шаг 2: Собираем фронтенд
       - name: Build Frontend
@@ -31,11 +30,6 @@ jobs:
         run: |
           npm ci
           npm run build
-
-      # Шаг 3: Устанавливаем зависимости бэкенда
-      - name: Install Backend Dependencies
-        working-directory: backend
-        run: npm ci --production
 
       # Шаг 4: Копируем файлы на сервер через SSH
       - name: Deploy Files
@@ -46,10 +40,8 @@ jobs:
           key: ${{ env.SSH_KEY }}
           source: |
             frontend/dist/*
-            backend/*
           target: |
             ${{ env.FRONTEND_DIR }}
-            ${{ env.BACKEND_DIR }}
 
       # Шаг 5: Запускаем команды на сервере через SSH
       - name: Restart Services
@@ -61,5 +53,4 @@ jobs:
           script: |
             cd ${{ env.BACKEND_DIR }}
             npm install --production
-            pm2 restart ecosystem.config.js
             sudo systemctl restart nginx
