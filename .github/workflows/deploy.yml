@@ -36,7 +36,7 @@ jobs:
 
       # Шаг 4: Копируем файлы на сервер через SSH
       - name: Deploy Files
-        uses: appleboy/scp-action@v1
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ env.SERVER_IP }}
           username: ${{ env.SSH_USER }}
@@ -50,7 +50,7 @@ jobs:
 
       # Шаг 5: Запускаем команды на сервере через SSH
       - name: Restart Services
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ env.SERVER_IP }}
           username: ${{ env.SSH_USER }}
