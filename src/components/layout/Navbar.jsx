@@ -23,7 +23,7 @@ const NavbarLink = ({ name, url }) => {
 
 export const Navbar = () => {
 	return (
-		<main className="container flex justify-center mx-auto">
+		<main className="container flex justify-center mx-auto backdrop-blur">
 			<div className="flex gap-2 my-2 py-1 px-2 rounded-xl shadow-xl">
 				<NavbarLink name="Главная" url="/" />
 				<NavbarLink name="Резюме" url="/resume" />
