@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom'
+
 const Technology = ({ name, description, image, link }) => {
     return (
         <div
@@ -13,6 +15,28 @@ const Technology = ({ name, description, image, link }) => {
     )
 }
 
+const MiniButton = ({ text, link }) => {
+    const navigate = useNavigate()
+
+    return (
+        <button
+            onClick={() => navigate(link)}
+            className="group flex items-center gap-2 cursor-pointer transition-colors hover:text-accent"
+        >
+            {text}
+            <svg
+                className="w-4 h-4 fill-black group-hover:fill-accent transition-colors translate-y-[2px] opacity-50 group-hover:opacity-100 transition-transform group-hover:scale-125"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 500 500"
+                width="500px"
+                height="500px"
+            >
+                <path d="M 443.3 56.684 L 443.3 354.286 C 443.334 369.555 426.863 379.144 413.604 371.566 C 408.507 368.632 404.983 363.605 403.944 357.846 L 403.636 354.286 L 403.588 129.055 C 403.588 127.578 402.004 126.621 400.69 127.353 C 400.572 127.424 400.421 127.542 400.314 127.66 L 90.565 437.482 C 83.798 444.279 73.133 445.251 65.246 439.798 L 62.536 437.482 C 55.736 430.717 54.767 420.05 60.22 412.163 L 62.536 409.419 L 372.204 99.67 C 373.279 98.629 372.819 96.843 371.387 96.43 C 371.232 96.382 371.044 96.346 370.842 96.346 L 145.695 96.346 C 136.104 96.346 127.91 89.545 126.169 80.11 L 125.863 76.48 C 125.863 66.734 132.863 58.658 142.098 56.954 L 145.729 56.684 L 443.3 56.684 Z" />
+            </svg>
+        </button>
+    )
+}
+
 export const Index = () => {
     return (
         <div className="container mx-auto relative my-16">
@@ -22,6 +46,11 @@ export const Index = () => {
                     Бэкенд-разработчик. Пишу на Java и Kotlin, работаю с Spring Boot — создаю API,
                     настраиваю логику серверов, учусь оптимизировать даже скучные задачи. Мой код не
                     претендует на гениальность, зато стабильно работает и решает проблемы.
+                </div>
+
+                <div className="my-4 flex gap-8">
+                    <MiniButton text="Резюме" link="/resume" />
+                    <MiniButton text="Дипломы" link="/diplomas" />
                 </div>
             </div>
             <div className="mx-auto flex flex-col items-center mt-32 text-center">
