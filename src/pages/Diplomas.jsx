@@ -1,7 +1,3 @@
 export const Diplomas = () => {
-    return (
-        <h1>
-            Diplomas
-        </h1>
-    )
+    return <div className="container mx-auto relative my-16">Diplomas</div>
 }
