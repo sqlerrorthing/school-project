@@ -41,6 +41,9 @@ export const Index = () => {
     return (
         <div className="container mx-auto relative my-16">
             <div className="mx-auto flex flex-col items-center backdrop-blur">
+                <span className="absolute w-55 h-55 bg-accent/10 -z-1 rounded-full animate-pulse blur-2xl bottom-0 right-0"></span>
+                <span className="absolute w-50 h-50 bg-accent/30 -z-1 rounded-full animate-pulse blur-2xl top0-0 left-0"></span>
+
                 <span className="text-6xl font-bold nunito text-center">Привет, я Рома👋</span>
                 <div className="w-full max-w-2xl mt-4 text-center">
                     Бэкенд-разработчик. Пишу на Java и Kotlin, работаю с Spring Boot — создаю API,
