@@ -58,7 +58,7 @@ const Block = ({
                 <img
                     src={`/assets/images/${icon}`}
                     alt=""
-                    className="w-full max-w-20 md:max-w-32 h-auto"
+                    className="w-full max-w-30 md:max-w-64 h-auto hover:scale-125 transition-transform"
                 />
             </div>
         </div>
@@ -89,7 +89,12 @@ const ContactButton = ({ icon, name, url }) => {
 export const Resume = () => {
     return (
         <div className="container mx-auto relative my-16">
-            <Block title="О себе" icon="java.svg" particle={true} particle_direction="right-bottom">
+            <Block
+                title="О себе"
+                icon="image-1.png"
+                particle={true}
+                particle_direction="right-bottom"
+            >
                 <span>
                     Мне 16 лет, и я активно погружаюсь в мир бэкенд-разработки. Люблю создавать
                     логику для приложений, а в свободное время предпочитаю уютные вечера с чашкой
@@ -97,7 +102,7 @@ export const Resume = () => {
                 </span>
             </Block>
 
-            <Block title="Образование" icon="kafka.svg" right={true}>
+            <Block title="Образование" icon="school.png" right={true}>
                 <div className="flex flex-col gap-4">
                     <span>МБОУ СОШ г. Ангарска</span>
                     <span>Учусь в 9 классе.</span>
