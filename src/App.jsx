@@ -5,6 +5,7 @@ import { Resume } from '@/pages/Resume.jsx'
 import { useEffect, useState } from 'react'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
+import { Projects } from './pages/Projects'
 
 export const App = () => {
     const [particlesInit, setParticlesInit] = useState(false)
@@ -20,8 +21,9 @@ export const App = () => {
             {particlesInit && <Particles id="tsparticles" url="/assets/particles.json" />}
             <Navbar />
             <Routes>
-                <Route key="/" path="/" element={<Index />} />
-                <Route key="/resume" path="/resume" element={<Resume />} />
+                <Route path="/" element={<Index />} />
+                <Route path="/resume" element={<Resume />} />
+                <Route path="/projects" element={<Projects />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </>
