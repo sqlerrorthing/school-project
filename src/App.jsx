@@ -8,26 +8,23 @@ import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
 
 export const App = () => {
-	const [particlesInit, setParticlesInit] = useState(false)
+    const [particlesInit, setParticlesInit] = useState(false)
 
-	useEffect(() => {
-		initParticlesEngine(async (engine) => {
-			await loadSlim(engine)
-		}).then(() =>
-			setParticlesInit(true)
-		)
-	}, [])
+    useEffect(() => {
+        initParticlesEngine(async engine => {
+            await loadSlim(engine)
+        }).then(() => setParticlesInit(true))
+    }, [])
 
-	return (
-		<>
-			{particlesInit && <Particles id="tsparticles" url="/assets/particles.json"/>}
-			<Navbar />
-			<Routes>
-				<Route key="/" path="/" element={<Index />} />
-				<Route key="/resume" path="/resume" element={<Resume />} />
-				<Route key="/diplomas" path="/diplomas" element={<Diplomas />} />
-				<Route path="*" element={<Navigate to="/" replace />} />
-			</Routes>
-		</>
-	)
+    return (
+        <>
+            {particlesInit && <Particles id="tsparticles" url="/assets/particles.json" />}
+            <Navbar />
+            <Routes>
+                <Route key="/" path="/" element={<Index />} />
+                <Route key="/resume" path="/resume" element={<Resume />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+        </>
+    )
 }
