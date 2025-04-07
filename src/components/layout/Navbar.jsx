@@ -25,6 +25,7 @@ export const Navbar = () => {
             <div className="flex gap-2 my-2 py-1 px-2 rounded-xl shadow-xl">
                 <NavbarLink name="Главная" url="/" />
                 <NavbarLink name="Резюме" url="/resume" />
+                <NavbarLink name="Проекты" url="/projects" />
             </div>
         </main>
     )
