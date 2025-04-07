@@ -11,7 +11,10 @@ const Technology = ({ name, description, image, link }) => {
             <div className="flex text-left flex-wrap flex-col">
                 <div className="flex items-center h-12 gap-2">
                     <span className="font-bold nunito text-xl">{name}</span>
-                    <ExternalLinkIcon className="opacity-0 w-3 h-3 fill-black group-hover:opacity-100 transition-opacity" />
+                    <div className="opacity-0 group-hover:opacity-50 transition-opacity flex items-center gap-2">
+                        <span>посетить</span>
+                        <ExternalLinkIcon className="w-3 h-3 fill-black" />
+                    </div>
                 </div>
                 <span>{description}</span>
             </div>
