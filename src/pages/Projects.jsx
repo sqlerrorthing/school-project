@@ -9,8 +9,10 @@ import {
     HTMLBadge,
     SvelteBadge,
     SCSSBadge,
+    SpringFrameworkBadge,
 } from '@/components/Badges'
 import { ExternalLinkIcon } from '@/components/ExternalLinkIcon'
+import clsx from 'clsx'
 
 const Block = ({ title, description, children }) => {
     return (
@@ -32,21 +34,30 @@ const ProjectsContainer = ({ children }) => {
     )
 }
 
-const Project = ({ preview, title, description, link, children: badges = null }) => {
+const Project = ({ preview = null, title, description, link, children: badges = null }) => {
     return (
         <button
-            className="group w-100 shadow-2xl overflow-hidden rounded-xl shrink-0 cursor-pointer flex flex-col items-start"
+            className="group w-100 shadow-2xl overflow-hidden rounded-xl shrink-0 cursor-pointer flex flex-col items-start backdrop-blur-xl"
             onClick={() => window.open(link, '_blank')}
         >
-            <div className="h-50 w-full overflow-hidden">
-                <img
-                    className="group-hover:scale-125 w-full h-full object-cover transition-transform duration-300"
-                    src={`/assets/images/projects/${preview}`}
-                    alt="Preview"
-                />
+            <div
+                className={clsx(
+                    'h-50 w-full overflow-hidden',
+                    !preview && 'flex items-center justify-center',
+                )}
+            >
+                {preview ? (
+                    <img
+                        className="group-hover:scale-125 w-full h-full object-cover transition-transform duration-300"
+                        src={`/assets/images/projects/${preview}`}
+                        alt="Preview"
+                    />
+                ) : (
+                    <img className="w-32 h-auto" src="/assets/images/no-image.svg" />
+                )}
             </div>
 
-            <div className="flex flex-col gap-y-2 text-left p-2 backdrop-blur-xl">
+            <div className="flex flex-col gap-y-2 text-left p-2">
                 <div className="flex items-center gap-1">
                     <span className="text-3xl font-bold nunito">{title}</span>
                     <ExternalLinkIcon className="opacity-0 w-3 h-3 fill-black group-hover:opacity-100 transition-opacity" />
@@ -63,18 +74,52 @@ export const Projects = () => {
         <div className="container mx-auto relative my-16">
             <Block
                 title="Мои проекты"
-                description="В этом разделе представлены мои личные проекты, разработанные в рамках обучения, хобби или самостоятельного изучения технологий. Каждый из них отражает мои навыки в программировании, работе с Kotlin, Java и другими языками программирования"
+                description="В этом разделе представлены мои личные проекты, разработанные в рамках обучения, хобби или самостоятельного изучения технологий. Каждый из них отражает мои навыки в программировании, работе с Kotlin, Java и другими языками программирования."
             >
                 <ProjectsContainer>
                     <Project
                         preview="riseloader.png"
                         title="RiseLoader"
-                        description="Десктопное приложения для клиента riseclient.com. Написан на Java с использованием JavaFX"
+                        description="Десктопное приложения для клиента riseclient.com."
                         link="https://github.com/sqlerrorthing/RiseLoader"
                     >
                         <JavaBadge />
                         <JavaFXBadge />
                         <CSSBadge />
+                    </Project>
+
+                    <Project
+                        title="OxyCloudDataset"
+                        description="Обширный список с более чем 700 тысяч ссылок на файлы в oxy.st (oxy.cloud)."
+                        link="https://github.com/sqlerrorthing/OxyCloudDataset/"
+                    >
+                        <JavaBadge />
+                    </Project>
+
+                    <Project
+                        title="PartyOverlay"
+                        description="Мод на игру Mineraft, который позволяет видеть своих друзей прямо в игре, что улучшает коммуникацию."
+                        link="https://github.com/sqlerrorthing/ItemRestrictPlus/"
+                    >
+                        <KotlinBadge />
+                        <SpringFrameworkBadge />
+                        <JavaBadge />
+                    </Project>
+
+                    <Project
+                        title="ItemRestrictPlus"
+                        description="Плагин на игру Minecraft который позволяет запрещать использование тех или иных предметов в тех или иных условиях."
+                        link="https://github.com/sqlerrorthing/ItemRestrictPlus/"
+                    >
+                        <JavaBadge />
+                    </Project>
+
+                    <Project
+                        title="upload-rs"
+                        description="CLI-Утилита которая позволяет загружать файл из под терминала на какой-то удаленный сервер"
+                        link="https://github.com/sqlerrorthing/upload-rs"
+                    >
+                        <RustBadge />
                     </Project>
                 </ProjectsContainer>
             </Block>
@@ -91,6 +136,7 @@ export const Projects = () => {
                             link="https://github.com/CCBlueX/LiquidBounce"
                         >
                             <KotlinBadge />
+                            <JavaBadge />
                             <RustBadge />
                             <SvelteBadge />
                             <HTMLBadge />
@@ -102,13 +148,23 @@ export const Projects = () => {
                         <Project
                             preview="catppuccinlb.png"
                             title="Catppuccin LB"
-                            description="Самая популярная тема от сообщества для LiquidBounce"
+                            description="Самая популярная тема от сообщества для LiquidBounce."
                             link="https://github.com/liquidsquid1/catppuccin-lb"
                         >
                             <SvelteBadge />
                             <HTMLBadge />
                             <TypeScriptBadge />
                             <SCSSBadge />
+                        </Project>
+
+                        <Project
+                            preview="lazurite.png"
+                            title="Lazurite"
+                            description="интерпретируемый язык программирования с динамической типизацией. Этот язык использует преимущества Java и упрощает его."
+                            link="https://github.com/ArtyomKingmang/Lazurite/"
+                        >
+                            <KotlinBadge />
+                            <JavaBadge />
                         </Project>
                     </ProjectsContainer>
                 </Block>
