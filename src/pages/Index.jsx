@@ -51,7 +51,7 @@ export const Index = () => {
                 </div>
 
                 <div className="my-4 flex gap-8">
-                    <MiniButton text="Резюме" link="/resume" />
+                    <MiniButton text="Навыки" link="/skills" />
                     <MiniButton text="Проекты" link="/projects" />
                     <MiniButton text="Контакты" link="/contacts" />
                 </div>

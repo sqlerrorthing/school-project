@@ -1,7 +1,7 @@
 import { Navbar } from '@/components/layout/Navbar.jsx'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { Index } from '@/pages/Index.jsx'
-import { Resume } from '@/pages/Resume.jsx'
+import { Skills } from '@/pages/Skills.jsx'
 import { useEffect, useState } from 'react'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
@@ -23,7 +23,7 @@ export const App = () => {
             <Navbar />
             <Routes>
                 <Route path="/" element={<Index />} />
-                <Route path="/resume" element={<Resume />} />
+                <Route path="/skills" element={<Skills />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
