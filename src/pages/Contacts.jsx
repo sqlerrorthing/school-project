@@ -21,6 +21,10 @@ export const Contacts = () => {
         <div className="container mx-auto relative my-16">
             <div className="mx-auto flex flex-col items-center backdrop-blur">
                 <span className="text-6xl font-bold nunito text-center">Связаться со мной</span>
+                <div className="w-full max-w-2xl mt-4 text-center">
+                    Если вы хотите связаться со мной, вы можете найти мои контактные
+                    данные/социальные сети ниже.
+                </div>
             </div>
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 w-full mt-5">
                 <ContactMethod icon="discord.svg" name="Discord" username="@sqlerrorthing" />
