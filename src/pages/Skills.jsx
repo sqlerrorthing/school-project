@@ -57,6 +57,7 @@ export const Skills = () => {
                     description="Базы данных, с которыми я работал, а также те, в которых я продолжаю углублять свои знания."
                 >
                     <Skill icon="postgresql.svg">PostgreSQL</Skill>
+                    <Skill icon="sqlite.svg">Sqlite</Skill>
                 </SkillGroup>
 
                 <SkillGroup
