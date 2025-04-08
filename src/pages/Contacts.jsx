@@ -3,7 +3,7 @@ import clsx from 'clsx'
 const ContactMethod = ({ icon, name, username, link = null }) => {
     return (
         <div className="rounded backdrop-blur-xl w-full h-50 shadow-xl bg-neutral-200/40 flex gap-4 flex-col justify-center items-center">
-            <img className="w-12 h-12" src={`/assets/images/contact/${icon}`} alt="" />
+            <img className="w-12 h-12" src={`/assets/images/${icon}`} alt="" />
             <div className="flex flex-col justify-center items-center gap-2">
                 <span className="text-xl font-bold">{name}</span>
                 {link ? (
