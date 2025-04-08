@@ -26,6 +26,7 @@ export const Navbar = () => {
                 <NavbarLink name="Главная" url="/" />
                 <NavbarLink name="Резюме" url="/resume" />
                 <NavbarLink name="Проекты" url="/projects" />
+                <NavbarLink name="Контакты" url="/contacts" />
             </div>
         </main>
     )

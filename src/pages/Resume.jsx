@@ -78,19 +78,6 @@ const Block = ({
     )
 }
 
-const ContactButton = ({ icon, name, url }) => {
-    return (
-        <button
-            className="group flex w-full md:w-100 px-6 py-4 items-center rounded-xl backdrop-blur-xl shadow-2xl cursor-pointer hover:shadow-accent/30 transition-shadow duration-500"
-            onClick={() => window.open(url, '_blank')}
-        >
-            <img className="w-8 h-auto mr-6" src={`/assets/images/${icon}`} alt="" />
-            <span className="text-xl font-normal">{name}</span>
-            <ExternalLinkIcon className="w-4 h-4 fill-black ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        </button>
-    )
-}
-
 export const Resume = () => {
     return (
         <div className="container mx-auto relative my-16">
@@ -140,33 +127,6 @@ export const Resume = () => {
                     />
                 </div>
             </Block>
-
-            <div className="text-3xl font-bold nunito md:text-6xl mx-auto flex flex-col items-center">
-                <span>Связаться со мной</span>
-
-                <div className="flex flex-col sm:grid xl:grid-cols-2 gap-8 mt-8">
-                    <ContactButton
-                        name="Discord"
-                        url="https://discord.com/users/1149990070682660944"
-                        icon={'discord.svg'}
-                    />
-                    <ContactButton
-                        name="Telegram"
-                        url="https://t.me/@sqlerrorph"
-                        icon={'telegram.svg'}
-                    />
-                    <ContactButton
-                        name="Instagram"
-                        url="https://t.me/@sqlerrorph"
-                        icon={'instagram.svg'}
-                    />
-                    <ContactButton
-                        name="LinkedIn"
-                        url="https://linked.in/@sqlerrorph"
-                        icon={'linkedin.svg'}
-                    />
-                </div>
-            </div>
         </div>
     )
 }

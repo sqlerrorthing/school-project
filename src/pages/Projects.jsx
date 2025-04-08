@@ -37,7 +37,7 @@ const ProjectsContainer = ({ children }) => {
 const Project = ({ preview = null, title, description, link, children: badges = null }) => {
     return (
         <button
-            className="group w-100 shadow-2xl overflow-hidden rounded-xl shrink-0 cursor-pointer flex flex-col items-start backdrop-blur-xl"
+            className="group w-100 shadow-2xl overflow-hidden rounded-xl shrink-0 cursor-pointer flex flex-col items-start backdrop-blur-xl h-fit"
             onClick={() => window.open(link, '_blank')}
         >
             <div
@@ -57,7 +57,7 @@ const Project = ({ preview = null, title, description, link, children: badges = 
                 )}
             </div>
 
-            <div className="flex flex-col gap-y-2 text-left p-2">
+            <div className="flex flex-col gap-y-2 text-left p-2 bg-neutral-200/40">
                 <div className="flex items-center gap-1">
                     <span className="text-3xl font-bold nunito">{title}</span>
                     <ExternalLinkIcon className="opacity-0 w-3 h-3 fill-black group-hover:opacity-100 transition-opacity" />
@@ -160,7 +160,7 @@ export const Projects = () => {
                         <Project
                             preview="lazurite.png"
                             title="Lazurite"
-                            description="интерпретируемый язык программирования с динамической типизацией. Этот язык использует преимущества Java и упрощает его."
+                            description="Это интерпретируемый язык программирования с динамической типизацией. Этот язык использует преимущества Java и упрощает его."
                             link="https://github.com/ArtyomKingmang/Lazurite/"
                         >
                             <KotlinBadge />
