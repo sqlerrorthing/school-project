@@ -1,7 +1,7 @@
 const Skill = ({ icon, children: name }) => {
     return (
         <div className="shadow-md rounded-xl p-4 flex items-center flex-col gap-4 backdrop-blur-xl h-fit">
-            <img src={`/assets/images/${icon}`} className="w-24 h-24" alt={name} />
+            <img src={`/assets/images/${icon}`} className="w-24" alt={name} />
             <span className="font-bold break-words max-w-min text-center">{name}</span>
         </div>
     )
