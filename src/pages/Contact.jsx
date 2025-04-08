@@ -16,7 +16,7 @@ const ContactMethod = ({ icon, name, username, link = null }) => {
     )
 }
 
-export const Contacts = () => {
+export const Contact = () => {
     return (
         <div className="container mx-auto relative my-16">
             <div className="mx-auto flex flex-col items-center backdrop-blur">

@@ -53,7 +53,7 @@ export const Index = () => {
                 <div className="my-4 flex gap-8">
                     <MiniButton link="/skills">Навыки</MiniButton>
                     <MiniButton link="/projects">Проекты</MiniButton>
-                    <MiniButton link="/contacts">Контакты</MiniButton>
+                    <MiniButton link="/contact">Связаться</MiniButton>
                 </div>
             </div>
             <div className="mx-auto flex flex-col items-center mt-32 text-center">

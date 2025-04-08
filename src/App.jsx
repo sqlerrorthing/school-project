@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
 import { Projects } from './pages/Projects'
-import { Contacts } from './pages/Contacts'
+import { Contact } from './pages/Contact'
 
 export const App = () => {
     const [particlesInit, setParticlesInit] = useState(false)
@@ -25,7 +25,7 @@ export const App = () => {
                 <Route path="/" element={<Index />} />
                 <Route path="/skills" element={<Skills />} />
                 <Route path="/projects" element={<Projects />} />
-                <Route path="/contacts" element={<Contacts />} />
+                <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </>
