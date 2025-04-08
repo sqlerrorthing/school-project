@@ -22,7 +22,7 @@ const Technology = ({ name, description, image, link }) => {
     )
 }
 
-const MiniButton = ({ text, link }) => {
+const MiniButton = ({ children: text, link }) => {
     const navigate = useNavigate()
 
     return (
@@ -51,9 +51,9 @@ export const Index = () => {
                 </div>
 
                 <div className="my-4 flex gap-8">
-                    <MiniButton text="Навыки" link="/skills" />
-                    <MiniButton text="Проекты" link="/projects" />
-                    <MiniButton text="Контакты" link="/contacts" />
+                    <MiniButton link="/skills">Навыки</MiniButton>
+                    <MiniButton link="/projects">Проекты</MiniButton>
+                    <MiniButton link="/contacts">Контакты</MiniButton>
                 </div>
             </div>
             <div className="mx-auto flex flex-col items-center mt-32 text-center">
