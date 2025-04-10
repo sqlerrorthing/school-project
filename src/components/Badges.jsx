@@ -21,5 +21,3 @@ export const TypeScriptBadge = () => <Badge className="bg-blue-700">TypeScript</
 export const HTMLBadge = () => <Badge className="bg-orange-500">HTML</Badge>
 
 export const SvelteBadge = () => <Badge className="bg-red-500">Svelte</Badge>
-
-export const SpringFrameworkBadge = () => <Badge className="bg-green-500">Spring Framework</Badge>

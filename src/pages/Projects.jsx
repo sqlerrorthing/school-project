@@ -9,7 +9,6 @@ import {
     HTMLBadge,
     SvelteBadge,
     SCSSBadge,
-    SpringFrameworkBadge,
 } from '@/components/Badges'
 import { ExternalLinkIcon } from '@/components/ExternalLinkIcon'
 import clsx from 'clsx'
@@ -34,27 +33,18 @@ const ProjectsContainer = ({ children }) => {
     )
 }
 
-const Project = ({ preview = null, title, description, link, children: badges = null }) => {
+const Project = ({ preview, title, description, link, children: badges = null }) => {
     return (
         <button
             className="group w-100 shadow-2xl overflow-hidden rounded-xl shrink-0 cursor-pointer flex flex-col items-start backdrop-blur-xl h-fit"
             onClick={() => window.open(link, '_blank')}
         >
-            <div
-                className={clsx(
-                    'h-50 w-full overflow-hidden',
-                    !preview && 'flex items-center justify-center',
-                )}
-            >
-                {preview ? (
-                    <img
-                        className="group-hover:scale-125 w-full h-full object-cover transition-transform duration-300"
-                        src={`/assets/images/projects/${preview}`}
-                        alt="Preview"
-                    />
-                ) : (
-                    <img className="w-32 h-auto" src="/assets/images/no-image.svg" />
-                )}
+            <div className="h-50 w-full overflow-hidden flex items-center justify-center">
+                <img
+                    className="group-hover:scale-125 w-full h-full object-cover transition-transform duration-300"
+                    src={`/assets/images/projects/${preview}`}
+                    alt="Preview"
+                />
             </div>
 
             <div className="flex flex-col gap-y-2 text-left p-2 bg-neutral-200/40">
@@ -89,6 +79,7 @@ export const Projects = () => {
                     </Project>
 
                     <Project
+                        preview="oxyclouddataset.png"
                         title="OxyCloudDataset"
                         description="Обширный список с более чем 700 тысяч ссылок на файлы в oxy.st (oxy.cloud)."
                         link="https://github.com/sqlerrorthing/OxyCloudDataset/"
@@ -97,29 +88,12 @@ export const Projects = () => {
                     </Project>
 
                     <Project
-                        title="PartyOverlay"
-                        description="Мод на игру Mineraft, который позволяет видеть своих друзей прямо в игре, что улучшает коммуникацию."
-                        link="https://github.com/sqlerrorthing/ItemRestrictPlus/"
-                    >
-                        <KotlinBadge />
-                        <SpringFrameworkBadge />
-                        <JavaBadge />
-                    </Project>
-
-                    <Project
+                        preview="itemrestrictplus.png"
                         title="ItemRestrictPlus"
                         description="Плагин на игру Minecraft который позволяет запрещать использование тех или иных предметов в тех или иных условиях."
                         link="https://github.com/sqlerrorthing/ItemRestrictPlus/"
                     >
                         <JavaBadge />
-                    </Project>
-
-                    <Project
-                        title="upload-rs"
-                        description="CLI-Утилита которая позволяет загружать файл из под терминала на какой-то удаленный сервер"
-                        link="https://github.com/sqlerrorthing/upload-rs"
-                    >
-                        <RustBadge />
                     </Project>
                 </ProjectsContainer>
             </Block>
