@@ -1,37 +1,37 @@
 name: Deploy to Production
 
 on:
-  push:
-    branches: [production]
+    push:
+        branches: [production]
 
 env:
-  SERVER_IP: ${{ secrets.PROD_SERVER_IP }}
-  SSH_USER: ${{ secrets.PROD_SSH_USER }}
-  SSH_KEY: ${{ secrets.PROD_SSH_KEY }}
-  FRONTEND_DIR: /var/www/project
+    SERVER_IP: ${{ secrets.PROD_SERVER_IP }}
+    SSH_USER: ${{ secrets.PROD_SSH_USER }}
+    SSH_KEY: ${{ secrets.PROD_SSH_KEY }}
+    FRONTEND_DIR: /var/www/project
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+    deploy:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-      - name: Build
-        run: |
-          npm ci
-          npm run build
+            - name: Build
+              run: |
+                  npm ci
+                  npm run build
 
-      - name: Deploy Files
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ env.SERVER_IP }}
-          username: ${{ env.SSH_USER }}
-          key: ${{ env.SSH_KEY }}
-          source: |
-            dist/*
-          target: |
-            ${{ env.FRONTEND_DIR }}
-          strip_components: 1
-          rm: true
+            - name: Deploy Files
+              uses: appleboy/scp-action@v0.1.7
+              with:
+                  host: ${{ env.SERVER_IP }}
+                  username: ${{ env.SSH_USER }}
+                  key: ${{ env.SSH_KEY }}
+                  source: |
+                      dist/*
+                  target: |
+                      ${{ env.FRONTEND_DIR }}
+                  strip_components: 1
+                  rm: true

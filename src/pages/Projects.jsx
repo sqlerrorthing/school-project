@@ -69,7 +69,7 @@ export const Projects = () => {
                     <Project
                         preview="riseloader.png"
                         title="RiseLoader"
-                        description="Десктопное приложения для клиента riseclient.com."
+                        description="Десктопное приложение для клиента riseclient.com."
                         link="https://github.com/sqlerrorthing/RiseLoader"
                     >
                         <JavaBadge />
