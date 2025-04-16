@@ -32,19 +32,14 @@ export const Contact = () => {
                     icon="telegram.svg"
                     name="Telegram"
                     username="@sqlerrorph"
-                    link="https://t.me/@sqlerrorph"
+                    link="https://t.me/sqlerrorph"
                 />
-                <ContactMethod
-                    icon="instagram.svg"
-                    name="Instagram"
-                    username="@sqlerrorthing"
-                    link="https://instagram.com/@sqlerrorthing"
-                />
+                <ContactMethod icon="instagram.svg" name="Instagram" username="@sqlerrorthing" />
                 <ContactMethod
                     icon="linkedin.svg"
                     name="LinkedIn"
                     username="sql errorthing"
-                    link="https://linked.in/@sqlerrorph"
+                    link="https://linkedin.com/in/dan-tarr"
                 />
                 <ContactMethod
                     icon="github.svg"
